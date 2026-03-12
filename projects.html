@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevator Installation Projects in Mumbai & Pune | Super Elevators</title>
+    <meta name="description"
+        content="Explore Super Elevators completed elevator installation projects across Mumbai, Pune, and Maharashtra. Residential, commercial, hospital, hotel, and car lift projects delivered with safety and precision.">
+    <link rel="canonical" href="https://superelevators.com/projects.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, rgb(95, 95, 207) 0%, blue 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .filter-tab {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            border-color: #ff6b6b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            position: relative;
+            overflow: hidden;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .project-image-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            z-index: 2;
+        }
+
+        .super-elevator-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 3;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .project-location {
+            color: #7f8c8d;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-category {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .implementation-section {
+            margin: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .implementation-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .implementation-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .implementation-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .lift-type {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .stat-item {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 4px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .filter-tabs {
+                gap: 10px;
+            }
+
+            .filter-tab {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+
+            .stats-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .hero-section {
+                padding: 40px 20px;
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <h1 class="hero-title">Elevator Installation Projects in Mumbai & Pune</h1>
+            <p class="hero-subtitle">Elevating Excellence Across Every Sector</p>
+        </div>
+        <p style="text-align:center; color:white; max-width:800px; margin:0 auto 30px;">
+            Super Elevators has successfully completed residential, commercial, hospital, hotel, and automotive lift
+            installation projects across Mumbai, Pune, and nearby regions. Our portfolio reflects our commitment to
+            safety, advanced technology, and reliable vertical transportation solutions.
+        </p>
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Commercial Project -->
+            <div class="project-card" data-category="commercial">
+                <div class="project-image">
+                    <img src="assests/metroplaza.png" alt="Commercial elevator installation project at Metro Plaza Complex in Malad Mumbai" class="elevator-photo" />
+                    <div class="super-elevator-badge">Super Elevator</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Metro Plaza Complex</h3>
+                    <div class="project-location">📍 Malad, Mumbai – Commercial Elevator Installation Project</div>
+                    <div class="project-category">Commercial</div>
+
+                    <div class="implementation-section">
+                        <div class="section-title">🔧 Implementation Highlights</div>
+                        <ul class="implementation-list">
+                            <li>High-speed passenger elevators with advanced control systems</li>
+                            <li>Energy-efficient LED lighting throughout</li>
+                            <li>Smart destination control system</li>
+                            <li>Emergency communication systems</li>
+                            <li>Fire-rated elevator shafts</li>
+                        </ul>
+                    </div>
+
+                    <div class="lift-type">🚀 High-Speed Traction Elevators</div>
+
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Elevators</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">25</div>
+                            <div class="stat-label">Floors</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2.5m/s</div>
+                            <div class="stat-label">Speed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Residential Project -->
+            <div class="project-card" data-category="residential">
+                <div class="project-image">
+                    <img src="assests/sv road.jpg" alt="Residential elevator installation project at SV Road Paramount in Bandra West Mumbai" />
+                    <div class="super-elevator-badge">Super Elevator</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">SV Road Paramount</h3>
+                    <div class="project-location">📍 Bandra West, Mumbai</div>
+                    <div class="project-category">Residential</div>
+
+                    <div class="implementation-section">
+                        <div class="section-title">🔧 Implementation Highlights</div>
+                        <ul class="implementation-list">
+                            <li>Smooth and quiet operation for residential comfort</li>
+                            <li>Elegant cabin interiors with premium finishes</li>
+                            <li>Access control systems for security</li>
+                            <li>Energy-efficient drive systems</li>
+                            <li>Emergency evacuation features</li>
+                        </ul>
+                    </div>
+
+                    <div class="lift-type">🏡 Machine Room-Less (MRL) Elevators</div>
+
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Elevators</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">32</div>
+                            <div class="stat-label">Floors</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1.75m/s</div>
+                            <div class="stat-label">Speed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Healthcare Project -->
+            <div class="project-card" data-category="healthcare">
+                <div class="project-image">
+                    <img src="assests/apollo.jpg" alt="Elevator at Apollo hospital " />
+                    <div class="super-elevator-badge">Super Elevator</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Apollo Multispecialty Hospital</h3>
+                    <div class="project-location">📍 Powai, Mumbai</div>
+                    <div class="project-category">Healthcare</div>
+
+                    <div class="implementation-section">
+                        <div class="section-title">🔧 Implementation Highlights</div>
+                        <ul class="implementation-list">
+                            <li>Hospital-grade stretcher elevators with increased capacity</li>
+                            <li>Antibacterial cabin surfaces and air purification</li>
+                            <li>Priority service for emergency operations</li>
+                            <li>Smooth leveling for patient comfort</li>
+                            <li>Independent power backup systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="lift-type">🚑 Hospital Service Elevators</div>
+
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Elevators</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Floors</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2100kg</div>
+                            <div class="stat-label">Capacity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Project -->
+            <div class="project-card" data-category="hotels">
+                <div class="project-image">
+                    <img src="assests/aarti hotel.jpg" alt="Elevator at Aarti Hotel" />
+                    <div class="super-elevator-badge">Super Elevator</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Aarti Hotel </h3>
+                    <div class="project-location">📍 Pune, Maharashtra – Hotel Elevator Installation Project</div>
+                    <div class="project-category">Hospitality</div>
+
+                    <div class="implementation-section">
+                        <div class="section-title">🔧 Implementation Highlights</div>
+                        <ul class="implementation-list">
+                            <li>Luxurious cabin interiors with marble and gold accents</li>
+                            <li>Silent operation for guest comfort</li>
+                            <li>High-speed service for efficiency</li>
+                            <li>24/7 monitoring and maintenance</li>
+                            <li>VIP service modes for special guests</li>
+                        </ul>
+                    </div>
+
+                    <div class="lift-type">✨ Luxury Passenger Elevators</div>
+
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Elevators</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">45</div>
+                            <div class="stat-label">Floors</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3.0m/s</div>
+                            <div class="stat-label">Speed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School Project -->
+            <div class="project-card" data-category="schools">
+                <div class="project-image">
+                    <img src="assests/newhighrise school.jpg" alt="Elevator at new highrise school " />
+                    <div class="super-elevator-badge">Super Elevator</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">New Highrise School </h3>
+                    <div class="project-location">📍 Chembur , Mumbai</div>
+                    <div class="project-category">Educational</div>
+
+                    <div class="implementation-section">
+                        <div class="section-title">🔧 Implementation Highlights</div>
+                        <ul class="implementation-list">
+                            <li>Child-safe design with rounded edges</li>
+                            <li>Educational LED displays showing fun facts</li>
+                            <li>Anti-vandal surfaces and controls</li>
+                            <li>Emergency communication with security</li>
+                            <li>Accessibility features for disabled students</li>
+                        </ul>
+                    </div>
+
+                    <div class="lift-type">📚 Educational Building Elevators</div>
+
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Elevators</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Floors</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1000kg</div>
+                            <div class="stat-label">Capacity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Park Project -->
+            <div class="project-card" data-category="business">
+                <div class="project-image">
+                    <img src="assests/business park.jpg" alt="Elevator at Business Parks " />
+                    <div class="super-elevator-badge">Super Elevator</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Sangvi Square</h3>
+                    <div class="project-location">📍 Ghatkopar, Mumbai</div>
+                    <div class="project-category">Business Park</div>
+
+                    <div class="implementation-section">
+                        <div class="section-title">🔧 Implementation Highlights</div>
+                        <ul class="implementation-list">
+                            <li>Smart building integration with IoT sensors</li>
+                            <li>Traffic analysis for optimal performance</li>
+                            <li>Eco-friendly regenerative drives</li>
+                            <li>Mobile app integration for users</li>
+                            <li>Predictive maintenance systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="lift-type">🌟 Smart Commercial Elevators</div>
+
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <div class="stat-number">16</div>
+                            <div class="stat-label">Elevators</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">28</div>
+                            <div class="stat-label">Floors</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2.5m/s</div>
+                            <div class="stat-label">Speed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Lift Project -->
+            <div class="project-card" data-category="car-lifts">
+                <div class="project-image">
+                    <img src="assests/traaficlite.jpg" alt="Elevator at Car Lift  " />
+                    <div class="super-elevator-badge">Super Elevator</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Traffic Lite </h3>
+                    <div class="project-location">📍 Ghatkopar, Mumbai</div>
+                    <div class="project-category">Automotive</div>
+
+                    <div class="implementation-section">
+                        <div class="section-title">🔧 Implementation Highlights</div>
+                        <ul class="implementation-list">
+                            <li>Heavy-duty platform design for luxury vehicles</li>
+                            <li>Precise positioning and alignment systems</li>
+                            <li>Safety barriers and vehicle restraints</li>
+                            <li>Weather-resistant components</li>
+                            <li>Remote operation capabilities</li>
+                        </ul>
+                    </div>
+
+                    <div class="lift-type">🚗 Automotive Platform Lifts</div>
+
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Car Lifts</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Levels</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3000kg</div>
+                            <div class="stat-label">Capacity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Filter functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                filterTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                const category = tab.dataset.category;
+
+                // Filter project cards
+                projectCards.forEach((card, index) => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                        // Stagger animation
+                        setTimeout(() => {
+                            card.style.animation = 'none';
+                            card.offsetHeight; // Trigger reflow
+                            card.style.animation = `slideInUp 0.6s ease-out ${index * 0.1}s forwards`;
+                        }, 10);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Animate cards on load
+        window.addEventListener('load', () => {
+            projectCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // Add hover effects and interactions
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        projectCards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+
+</html>
